@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Business / Product / Channel Tables</title>
+  <title>Business – L1 / L2</title>
   <style>
     :root {
       --blue: #1f4e8c;
@@ -13,189 +13,148 @@
       --muted: #6b7280;
     }
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:14px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
-    .wrap{
-      max-width:1200px; margin:32px auto; padding:0 16px;
-      display:grid; gap:20px; grid-template-columns:repeat(3,1fr);
-      align-items:start;
-    }
-    .card{
-      background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden;
-      box-shadow:0 1px 2px rgba(0,0,0,.04);
-    }
-    .caption{
-      background:var(--blue); color:#fff; padding:10px 14px; font-weight:700; letter-spacing:.2px;
-    }
-    .subtitle{font-size:12px; color:#e2e8f0}
-    table{width:100%; border-collapse:separate; border-spacing:0}
+    .wrap{max-width:750px;margin:32px auto;padding:0 16px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+    .caption{background:var(--blue);color:#fff;padding:10px 14px;font-weight:700;letter-spacing:.2px}
+    .subtitle{font-size:12px;color:#e2e8f0}
+    table{width:100%;border-collapse:separate;border-spacing:0}
     thead th{
-      background:#e9eff9; color:#0f172a; font-weight:700; text-align:left;
-      border-bottom:1px solid var(--border); padding:8px 10px;
+      background:#e9eff9;color:#0f172a;font-weight:700;text-align:left;
+      border-bottom:1px solid var(--border);padding:8px 10px
     }
     tbody td{
-      border-bottom:1px solid var(--border); border-right:1px solid var(--border);
-      padding:8px 10px; vertical-align:top;
+      border-bottom:1px solid var(--border);border-right:1px solid var(--border);
+      padding:8px 10px;vertical-align:top
     }
     tbody td:last-child{border-right:none}
     tbody tr:last-child td{border-bottom:none}
     .group{font-weight:600}
-    .mini{color:var(--muted)}
-    /* Make first column slightly narrower on the 3rd table */
-    .channels col:first-child{width:26%}
-    .channels col:nth-child(2){width:44%}
-    .channels col:nth-child(3){width:30%}
-    /* Small screens: stack cards */
-    @media (max-width:980px){
-      .wrap{grid-template-columns:1fr}
+
+    /* Link-style buttons */
+    .poplink{
+      background:none;border:none;padding:0;margin:0;
+      font:inherit;color:#1d4ed8;cursor:pointer;text-decoration:underline;
+    }
+    .poplink:focus-visible{outline:2px solid #93c5fd;outline-offset:2px;border-radius:4px}
+
+    /* Popover */
+    .popover{
+      position:fixed; /* relative to viewport */
+      max-width:280px;
+      background:#fff;border:1px solid var(--border);border-radius:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,.15);
+      padding:10px 12px;z-index:9999;display:none
+    }
+    .popover h4{margin:0 0 6px;font-size:14px}
+    .popover p{margin:0;color:var(--muted);font-size:13px}
+    .popover:after{
+      content:"";position:absolute;left:50%;transform:translateX(-50%);
+      bottom:-8px;border:8px solid transparent;border-top-color:#fff;filter:drop-shadow(0 2px 2px rgba(0,0,0,.06))
+    }
+    .popover.top:after{bottom:-8px;transform:translateX(-50%) rotate(180deg)}
+    .close-x{
+      position:absolute;top:6px;right:8px;border:none;background:none;cursor:pointer;
+      font-size:16px;line-height:1;color:#64748b
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <!-- BUSINESS -->
+    <!-- BUSINESS (only table shown in the image) -->
     <section class="card">
       <div class="caption">Como a empresa se organiza?</div>
       <table aria-label="Business structure">
         <thead>
           <tr>
-            <th class="mini">L1</th>
-            <th class="mini">L2</th>
+            <th class="subtitle">Business • <span>L1</span></th>
+            <th class="subtitle">L2</th>
           </tr>
         </thead>
         <tbody>
           <!-- Retail -->
           <tr>
-            <td class="group" rowspan="6">Retail</td>
-            <td>Wealth</td>
+            <td class="group" rowspan="6">
+              <button class="poplink" data-title="Retail" data-desc="description.">Retail</button>
+            </td>
+            <td><button class="poplink" data-title="Wealth" data-desc="description.">Wealth</button></td>
           </tr>
-          <tr><td>Elliot</td></tr>
-          <tr><td>WaaS</td></tr>
-          <tr><td>Retail Desk</td></tr>
-          <tr><td>Capital Markets</td></tr>
-          <tr><td>Asset Management</td></tr>
+          <tr><td><button class="poplink" data-title="Elliot" data-desc="description.">Elliot</button></td></tr>
+          <tr><td><button class="poplink" data-title="WaaS" data-desc="description.">WaaS</button></td></tr>
+          <tr><td><button class="poplink" data-title="Retail Desk" data-desc="description.">Retail Desk</button></td></tr>
+          <tr><td><button class="poplink" data-title="Capital Markets" data-desc="description.">Capital Markets</button></td></tr>
+          <tr><td><button class="poplink" data-title="Asset Management" data-desc="description.">Asset Management</button></td></tr>
+
           <!-- Institutional -->
           <tr>
-            <td class="group" rowspan="1">Institutional</td>
-            <td>Institutional</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <!-- PRODUCT -->
-    <section class="card">
-      <div class="caption">Quais os produtos nossos clientes usam?</div>
-      <table aria-label="Products">
-        <thead>
-          <tr>
-            <th class="mini">L1</th>
-            <th class="mini">L2</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="group" rowspan="2">Account</td>
-            <td>Account</td>
-          </tr>
-          <tr><td>Global</td></tr>
-          <tr>
-            <td class="group" rowspan="6">Management Services</td>
-            <td>Equities</td>
-          </tr>
-          <tr><td>General Funds</td></tr>
-          <tr><td>Treasuries</td></tr>
-          <tr><td>Corporate Bonds</td></tr>
-          <tr><td>Exclusive Funds</td></tr>
-          <tr><td>Others</td></tr>
-          <tr>
-            <td class="group" rowspan="5">Product Picking</td>
-            <td>General Funds</td>
-          </tr>
-          <tr><td>Equities</td></tr>
-          <tr><td>Treasuries</td></tr>
-          <tr><td>Corporate Bonds</td></tr>
-          <tr><td>Private Pension Funds</td></tr>
-          <tr>
-            <td class="group" rowspan="4">Cross-Sell</td>
-            <td>FX</td>
-          </tr>
-          <tr><td>Insurance</td></tr>
-          <tr><td>Credit</td></tr>
-          <tr><td>Treasuries</td></tr>
-          <tr>
-            <td class="group" rowspan="6">Trading Services</td>
-            <td>Corporate Bonds</td>
-          </tr>
-          <tr><td>BOV</td></tr>
-          <tr><td>BMF</td></tr>
-          <tr><td>Structured Ops</td></tr>
-          <tr><td>Securities Lending</td></tr>
-          <tr><td>Retail Liquidity Provider</td></tr>
-          <tr>
-            <td class="group" rowspan="2">Asset Management</td>
-            <td>General Funds</td>
-          </tr>
-          <tr><td>Private Pension Funds</td></tr>
-          <tr>
-            <td class="group" rowspan="2">Capital Markets</td>
-            <td>DCM</td>
-          </tr>
-          <tr><td>ECM</td></tr>
-        </tbody>
-      </table>
-    </section>
-    <!-- CHANNEL -->
-    <section class="card">
-      <div class="caption">Quem atende o cliente?</div>
-      <table class="channels" aria-label="Channels">
-        <colgroup>
-          <col><col><col>
-        </colgroup>
-        <thead>
-          <tr>
-            <th class="mini">Channel</th>
-            <th class="mini">Subchannel</th>
-            <th class="mini">Reporting Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- B2C -->
-          <tr>
-            <td class="group" rowspan="6">B2C</td>
-            <td>MFO</td>
-            <td>Complementary</td>
-          </tr>
-          <tr><td>W</td><td>Executive View</td></tr>
-          <tr><td>Plus</td><td>Executive View</td></tr>
-          <tr><td>Digital</td><td>Executive View</td></tr>
-          <tr><td>Extra Channel</td><td>Executive View</td></tr>
-          <tr><td>Retail Desk</td><td>Executive View</td></tr>
-          <!-- B2B -->
-          <tr>
-            <td class="group" rowspan="4">B2B</td>
-            <td>Elliot</td>
-            <td>Executive View</td>
-          </tr>
-          <tr><td>WaaS</td><td>Executive View</td></tr>
-          <tr><td>Pro</td><td>Executive View</td></tr>
-          <tr><td>Fiduciary Administration</td><td>Complementary</td></tr>
-          <!-- Institutional -->
-          <tr>
-            <td class="group" rowspan="5">Institutional</td>
-            <td>Treasuries Desk</td>
-            <td>Executive View</td>
-          </tr>
-          <tr><td>Corporate Bonds Desk</td><td>Executive View</td></tr>
-          <tr><td>BMF Desk</td><td>Executive View</td></tr>
-          <tr><td>BOV Desk</td><td>Executive View</td></tr>
-          <tr><td>Others</td><td>Executive View</td></tr>
-          <!-- Proprietary -->
-          <tr>
-            <td class="group" rowspan="1">Proprietary</td>
-            <td>Proprietary</td>
-            <td>Complementary</td>
+            <td class="group">
+              <button class="poplink" data-title="Institutional (L1)" data-desc="description.">Institutional</button>
+            </td>
+            <td><button class="poplink" data-title="Institutional (L2)" data-desc="description.">Institutional</button></td>
           </tr>
         </tbody>
       </table>
     </section>
   </div>
+
+  <!-- Single reusable popover -->
+  <div id="popover" class="popover" role="dialog" aria-modal="false" aria-hidden="true">
+    <button class="close-x" aria-label="Fechar" title="Fechar">&times;</button>
+    <h4 id="pop-title">Título</h4>
+    <p id="pop-desc">description.</p>
+  </div>
+
+  <script>
+    (function () {
+      const pop = document.getElementById('popover');
+      const title = document.getElementById('pop-title');
+      const desc = document.getElementById('pop-desc');
+      const closeBtn = pop.querySelector('.close-x');
+
+      function openPopoverFor(el){
+        title.textContent = el.dataset.title || 'Categoria';
+        desc.textContent = el.dataset.desc || 'description.';
+
+        // Show to measure
+        pop.style.display = 'block';
+        pop.setAttribute('aria-hidden', 'false');
+
+        // Position above the clicked element (centered)
+        const r = el.getBoundingClientRect();
+        const popRect = pop.getBoundingClientRect();
+        const top = Math.max(12, r.top - popRect.height - 12);
+        const left = Math.min(
+          window.innerWidth - popRect.width - 12,
+          Math.max(12, r.left + r.width / 2 - popRect.width / 2)
+        );
+
+        pop.style.top = `${top}px`;
+        pop.style.left = `${left}px`;
+      }
+
+      function closePopover(){
+        pop.style.display = 'none';
+        pop.setAttribute('aria-hidden', 'true');
+      }
+
+      document.addEventListener('click', (e) => {
+        const link = e.target.closest('.poplink');
+        if (link) {
+          e.preventDefault();
+          openPopoverFor(link);
+        } else if (!e.target.closest('#popover')) {
+          closePopover();
+        }
+      });
+
+      closeBtn.addEventListener('click', closePopover);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closePopover();
+      });
+
+      // Keep popover within viewport on resize/scroll
+      window.addEventListener('resize', () => { if (pop.style.display === 'block') closePopover(); });
+      window.addEventListener('scroll', () => { if (pop.style.display === 'block') closePopover(); });
+    })();
+  </script>
 </body>
 </html>
