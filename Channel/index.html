@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Channel – Channel / Subchannel</title>
+  <style>
+    :root{
+      --header-bg:#a2402f;
+      --border:#d1c2b4;
+      --bg:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+      font:14px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    .wrap{max-width:750px;margin:32px auto;padding:0 16px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;
+      box-shadow:0 1px 2px rgba(0,0,0,.04)}
+    table{width:100%;border-collapse:separate;border-spacing:0;text-align:center}
+    thead th{padding:8px 10px;font-weight:700}
+    .head-main th{color:#fff;font-size:16px;background:var(--header-bg);
+      border-bottom:1px solid var(--border)}
+    .head-sub th{background:rgba(128,128,128,.2);color:#000;border-bottom:1px solid var(--border)}
+    .head-sub th:first-child{border-right:1px solid var(--border)}
+
+    tbody td{border-bottom:1px solid var(--border);border-right:1px solid var(--border);
+      padding:8px 10px;vertical-align:middle}
+    tbody td:last-child{border-right:none}
+    tbody tr:last-child td{border-bottom:none}
+    td.group{font-weight:600;text-align:center;vertical-align:middle;border-right:1px solid var(--border)}
+    td.spacer{ /* left empty cell for the shared Elliot row */
+      padding:0; /* no extra height besides the right cell’s padding */
+    }
+
+    .poplink{background:none;border:none;padding:0;margin:0;font:inherit;color:#000;
+      text-decoration:underline;cursor:pointer}
+    .poplink:focus-visible{outline:2px solid #ffd3b1;outline-offset:2px;border-radius:4px}
+
+    .popover{position:fixed;max-width:280px;background:#fff;border:1px solid var(--border);
+      border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.15);padding:10px 12px;z-index:9999;display:none}
+    .popover h4{margin:0 0 6px;font-size:14px}
+    .popover p{margin:0;color:var(--muted);font-size:13px}
+    .popover:after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-8px;
+      border:8px solid transparent;border-top-color:#fff;filter:drop-shadow(0 2px 2px rgba(0,0,0,.06))}
+    .close-x{position:absolute;top:6px;right:8px;border:none;background:none;cursor:pointer;
+      font-size:16px;line-height:1;color:#64748b}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card">
+      <table aria-label="Channel structure">
+        <thead>
+          <tr class="head-main"><th colspan="2">Channel</th></tr>
+          <tr class="head-sub"><th>Channel</th><th>Subchannel</th></tr>
+        </thead>
+        <tbody>
+          <!-- B2C (7 rows) -->
+          <tr>
+            <td class="group" rowspan="7">
+              <button class="poplink" data-title="B2C" data-desc="Consumer-facing channel.">B2C</button>
+            </td>
+            <td><button class="poplink" data-title="MFO">MFO</button></td>
+          </tr>
+          <tr><td><button class="poplink" data-title="W">W</button></td></tr>
+          <tr><td><button class="poplink" data-title="Plus">Plus</button></td></tr>
+          <tr><td><button class="poplink" data-title="Digital">Digital</button></td></tr>
+          <tr><td><button class="poplink" data-title="Extra Channel">Extra Channel</button></td></tr>
+          <tr><td><button class="poplink" data-title="Retail Desk">Retail Desk</button></td></tr>
+          <tr><td><button class="poplink" data-title="Elliot">Elliot</button></td></tr>
+
+          <!-- B2B (starts immediately after Elliot) -->
+          <tr>
+            <td class="group" rowspan="4">
+              <button class="poplink" data-title="B2B" data-desc="Business-facing channel.">B2B</button>
+            </td>
+            <td><button class="poplink" data-title="WaaS">WaaS</button></td>
+          </tr>
+          <tr><td><button class="poplink" data-title="Pro">Pro</button></td></tr>
+          <tr><td><button class="poplink" data-title="Elliot">Elliot</button></td></tr>
+          <tr><td><button class="poplink" data-title="Fiduciary Administration">Fiduciary Administration</button></td></tr>
+
+          <!-- Institutional -->
+          <tr>
+            <td class="group" rowspan="5">
+              <button class="poplink" data-title="Institutional">Institutional</button>
+            </td>
+            <td><button class="poplink" data-title="Treasuries Desk">Treasuries Desk</button></td>
+          </tr>
+          <tr><td><button class="poplink" data-title="Corporate Bonds Desk">Corporate Bonds Desk</button></td></tr>
+          <tr><td><button class="poplink" data-title="BMF Desk">BMF Desk</button></td></tr>
+          <tr><td><button class="poplink" data-title="BOV Desk">BOV Desk</button></td></tr>
+          <tr><td><button class="poplink" data-title="Others">Others</button></td></tr>
+
+          <!-- Proprietary -->
+          <tr>
+            <td class="group"><button class="poplink" data-title="Proprietary">Proprietary</button></td>
+            <td><button class="poplink" data-title="Proprietary">Proprietary</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- Popover -->
+  <div id="popover" class="popover" role="dialog" aria-modal="false" aria-hidden="true">
+    <button class="close-x" aria-label="Fechar" title="Fechar">&times;</button>
+    <h4 id="pop-title">Título</h4>
+    <p id="pop-desc">description.</p>
+  </div>
+  <script>
+    (function () {
+      const pop = document.getElementById('popover');
+      const title = document.getElementById('pop-title');
+      const desc = document.getElementById('pop-desc');
+      const closeBtn = pop.querySelector('.close-x');
+      function openPopoverFor(el){
+        title.textContent = el.dataset.title || 'Categoria';
+        desc.textContent = el.dataset.desc || 'description.';
+        pop.style.display = 'block'; pop.setAttribute('aria-hidden','false');
+        const r = el.getBoundingClientRect(), pr = pop.getBoundingClientRect();
+        pop.style.top = Math.max(12, r.top - pr.height - 12) + 'px';
+        pop.style.left = Math.min(innerWidth - pr.width - 12, Math.max(12, r.left + r.width/2 - pr.width/2)) + 'px';
+      }
+      function closePopover(){ pop.style.display = 'none'; pop.setAttribute('aria-hidden','true'); }
+      document.addEventListener('click', e => {
+        const link = e.target.closest('.poplink');
+        if (link){ e.preventDefault(); openPopoverFor(link); }
+        else if (!e.target.closest('#popover')) closePopover();
+      });
+      closeBtn.addEventListener('click', closePopover);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopover(); });
+      addEventListener('resize', () => { if (pop.style.display === 'block') closePopover(); });
+      addEventListener('scroll',  () => { if (pop.style.display === 'block') closePopover(); });
+    })();
+  </script>
+</body>
+</html>
