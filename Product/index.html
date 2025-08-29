@@ -6,7 +6,7 @@
   <title>Product – L1 / L2</title>
   <style>
     :root{
-      --header-bg:#a2402f;
+      --header-bg:#C7452D;
       --border:#d1c2b4;
       --bg:#ffffff;
       --text:#1f2937;
@@ -36,7 +36,7 @@
       border-bottom:1px solid var(--border);
     }
     .head-sub th{
-      background:rgba(128,128,128,0.2);
+      background:rgba(246,234,233);
       color:#000000;
       border-bottom:1px solid var(--border);
     }
@@ -115,59 +115,66 @@
         <tbody>
           <tr>
             <td class="group"><button class="poplink" data-title="Account" data-desc="Segmento que representa a conta aberta pelo cliente ao se cadastrar na plataforma Warren.">Account</button></td>
-            <td><button class="poplink" data-title="Account" data-desc="Gera receita de floating por meio do dinheiro parado na conta do cliente.">Account</button></td>
+            <td><button class="poplink" data-title="Account" data-desc="Produto relacionado ao saldo em conta dos clientes.">Account</button></td>
           </tr>
-          <tr><td class="group" rowspan="7"><button class="poplink" data-title="Management Services" data-desc="Segmento dos produtos financeiros utilizados por clientes que são geridos diretamente pela Warren.">Management Services</button></td><td><button class="poplink" data-title="Global" data-desc="Gestão global de patrimônio? Gera receita por meio de Management Fee?">Global</button></td></tr>
-          <tr><td><button class="poplink" data-title="Equities" data-desc="Investimentos em ações. Gera receita por meio de Brokerage Fee">Equities</button></td></tr>
-          <tr><td><button class="poplink" data-title="General Funds" data-desc="Dinheiro alocado em fundos de investimentos gerais. Gera receita por meio de Service Fee ou Performance Fee, cobradas pela gestão do investimento. O tipo de taxa cobrada depende do canal de atendimento do cliente (B2B ou B2C).
+          <tr><td class="group" rowspan="6"><button class="poplink" data-title="Management Services" data-desc="Segmento dos produtos financeiros que envolvem a administração de carteiras.">Management Services</button></td><td><button class="poplink" data-title="Global" data-desc="Carteiras administradas internacionais, em parceiros como Interactive Brokers e outros bancos private. Gera receita por meio de Service Fee.">Global</button></td></tr>
+          <tr><td><button class="poplink" data-title="Equities" data-desc="Carteiras administradas de ativos de RV, conhecidas como Index+. Gera receita por meio de Service Fee e Performance Fee.">Equities</button></td></tr>
+          <tr><td><button class="poplink" data-title="General Funds" data-desc="Carteiras administradas de fundos de investimentos gerais. Gera receita por meio de Service Fee ou Performance Fee. O tipo de taxa cobrada depende do canal de atendimento do cliente (B2B ou B2C).
 ">General Funds</button></td></tr>
-          <tr><td><button class="poplink" data-title="Treasuries" data-desc="Investimentos no Tesouro Direto. Gera receita por meio de Brokerage Fee.">Treasuries</button></td></tr>
-          <tr><td><button class="poplink" data-title="Corporate Bonds" data-desc="Investimentos em compra de títulos de dívida emitidos por empresas privadas. Gera receita por meio de Brokerage Fee.">Corporate Bonds</button></td></tr>
-          <tr><td><button class="poplink" data-title="Exclusive Funds" data-desc="Dinheiro alocado em fundos de investimento exclusivos. Gera receita por meio de Service Fee (Taxas de Serviço) ou Performance Fee (Taxas de Performance). ">Exclusive Funds</button></td></tr>
-          <tr><td><button class="poplink" data-title="Others" data-desc="Descrição">Others</button></td></tr>
+          <tr><td><button class="poplink" data-title="Treasuries" data-desc="Casteiras administradas de Tesouro Direto. Gera receita por meio de Service Fee e Performance Fee.">Treasuries</button></td></tr>
+          <tr><td><button class="poplink" data-title="Corporate Bonds" data-desc="Carteiras administradas de crédito privado. Gera receita por meio de Service Fee e Performance Fee.">Corporate Bonds</button></td></tr>
+          <tr><td><button class="poplink" data-title="Others" data-desc="Saldo em custódia externa.">Others</button></td></tr>
           
           <tr>
-            <td class="group" rowspan="5"><button class="poplink" data-title="Product Picking" data-desc="Segmento dos produtos financeiros oferecidos pela Warren que podem ser escolhidos e geridos individualmente pelo cliente ou por um intermediário.">Product Picking</button></td>
-            <td><button class="poplink" data-title="General Funds" data-desc="Dinheiro alocado em fundos de investimentos gerais. Gera receita por meio de Service Fee ou Performance Fee, cobradas pela gestão do investimento. O tipo de taxa cobrada depende do canal de atendimento do cliente (B2B ou B2C).">General Funds</button></td>
+            <td class="group" rowspan="5"><button class="poplink" data-title="Product Picking" data-desc="Segmento dos produtos financeiros oferecidos pela Warren que podem ser escolhidos individualmente pelo cliente. Conhecidos como produtos de prateleira.">Product Picking</button></td>
+            <td><button class="poplink" data-title="General Funds" data-desc="Distribuição de fundos de investimentos gerais, ou seja, que não são Exclusivos nem de Previdência. Gera receita por meio de Service Fee. As receitas associadas à gestão de fundos se encontram no L1 Asset Management.">General Funds</button></td>
           </tr>
-          <tr><td><button class="poplink" data-title="Equities" data-desc="Investimentos em ações. Gera receita por meio de Brokerage Fee.">Equities</button></td></tr>
-          <tr><td><button class="poplink" data-title="Treasuries" data-desc="Investimentos no Tesouro Direto. Gera receita por meio de Brokerage Fee.">Treasuries</button></td></tr>
-          <tr><td><button class="poplink" data-title="Corporate Bonds" data-desc="Investimentos em compra de títulos de dívida emitidos por empresas privadas. Gera receita por meio de Brokerage Fee.">Corporate Bonds</button></td></tr>
-          <tr><td><button class="poplink" data-title="Private Pension Funds" data-desc="Dinheiro alocado em fundos de pensão privados. Gera receita por meio de Service Fee ou Performance Fee.">Private Pension Funds</button></td></tr>
+          <tr><td><button class="poplink" data-title="Equities" data-desc="Distribuição de ativos de RV, como ações, BDRs, ETFs, FIIs. Gera receita por meio de Service Fee. A receita transacional de ações se localiza em Trading Services / BOV.">Equities</button></td></tr>
+          <tr><td><button class="poplink" data-title="Treasuries" data-desc="Distribuição de ativos do Tesouro Direto. Gera receita por meio de Service Fee ou Spread.">Treasuries</button></td></tr>
+          <tr><td><button class="poplink" data-title="Corporate Bonds" data-desc="Distribuição de títulos de dívida emitidos por empresas privadas. Gera receita por meio de Service Fee.">Corporate Bonds</button></td></tr>
+          <tr><td><button class="poplink" data-title="Private Pension Funds" data-desc="Distribuição de fundos de pensão privados. Gera receita por meio de Comissão ou Rebate. As receitas associadas à gestão de fundos se encontram no L1 Asset Management.">Private Pension Funds</button></td></tr>
           
           <!-- Cross-Sell UPDATED -->
           <tr>
             <td class="group" rowspan="3"><button class="poplink" data-title="Cross-Sell" data-desc="Segmento dos produtos relacionados às operações transacionais, que não geram receita de forma recorrente e que não necessariamente requerem cadastro do cliente na Warren.">Cross-Sell</button></td>
-            <td><button class="poplink" data-title="FX" data-desc="Operações de câmbio. Gera receita através de Spread.">FX</button></td>
+            <td><button class="poplink" data-title="FX" data-desc="Operações de câmbio realizadas com intermédio da Warren. Gera receita através de Spread.">FX</button></td>
           </tr>
-          <tr><td><button class="poplink" data-title="Insurance" data-desc="Contratações de Seguro realizadas por intermédio da Warren. Gera receita por meio de Comission.">Insurance</button></td></tr>
-          <tr><td><button class="poplink" data-title="Credit" data-desc="Contratações de Crédito realizadas por intermédio da Warren. Gera receita por meio de Comission.">Credit</button></td></tr>
+          <tr><td><button class="poplink" data-title="Insurance" data-desc="Contratações de seguros de vida realizadas por intermédio da Warren. Gera receita por meio de Commission.">Insurance</button></td></tr>
+          <tr><td><button class="poplink" data-title="Credit" data-desc="Contratações de crédito realizadas por intermédio da Warren, como por exemplo crédito imobiliário, veicular, consórcio, etc. Gera receita por meio de Commission.">Credit</button></td></tr>
           
           <!-- Trading Services UPDATED -->
           <tr>
-            <td class="group" rowspan="7"><button class="poplink" data-title="Trading Services" data-desc="Segmento dos produtos financeiros utilizados em operações de trading.">Trading Services</button></td>
-            <td><button class="poplink" data-title="Treasuries" data-desc="Títulos do Tesouro Direto negociados em operações de trading. Gera receita através de Brokerage Fee.">Treasuries</button></td>
+            <td class="group" rowspan="6"><button class="poplink" data-title="Trading Services" data-desc="Segmento dos produtos financeiros focados em trading ou que facilitam a intermediação das operações.">Trading Services</button></td>
+            <td><button class="poplink" data-title="Treasuries" data-desc="Negociações de títulos do Tesouro Direto. Gera receita através de Brokerage Fee e/ou Spread.">Treasuries</button></td>
           </tr>
-          <tr><td><button class="poplink" data-title="Corporate Bonds" data-desc="Títulos de dívida privados negociados em operações de trading. Gera receita através de Brokerage Fee.">Corporate Bonds</button></td></tr>
-          <tr><td><button class="poplink" data-title="BOV" data-desc="description.">BOV</button></td></tr>
-          <tr><td><button class="poplink" data-title="BMF" data-desc="description.">BMF</button></td></tr>
-          <tr><td><button class="poplink" data-title="Structured Ops" data-desc="description.">Structured Ops</button></td></tr>
-	  <tr><td><button class="poplink" data-title="Securities Lending" data-desc="description.">Securities Lending</button></td></tr>
-          <tr><td><button class="poplink" data-title="Retail Liquidity Provider" data-desc="description.">Retail Liquidity Provider</button></td></tr>
+          <tr><td><button class="poplink" data-title="Corporate Bonds" data-desc="Negociações de títulos privados de RF. Gera receita através de Brokerage Fee.">Corporate Bonds</button></td></tr>
+          <tr><td><button class="poplink" data-title="BOV" data-desc="Negociações à vista no mercado de RV, como ações, ETFs, FIIs, entre outros (por exemplo, PETR4 e VALE3). Gera receita através de Brokerage Fee.">BOV</button></td></tr>
+          <tr><td><button class="poplink" data-title="BMF" data-desc="Negociações no mercado de futuro/derivativos, como por exemplo contratos de dólar, juros, commodities e índices (por exemplo, contrato futuro de café, mini dólar, mini índice). Gera receita através de Brokerage Fee e Spread.">BMF</button></td></tr>
+	      <tr><td><button class="poplink" data-title="Securities Lending" data-desc="description.">Securities Lending</button></td></tr>
+          <tr><td><button class="poplink" data-title="Retail Liquidity Provider" data-desc="Serviço de liquidez para ordens em BMF. Gera receita através de Spread.">Retail Liquidity Provider</button></td></tr>
           
           <!-- Asset Management UPDATED -->
           <tr>
-            <td class="group" rowspan="2"><button class="poplink" data-title="Asset Management" data-desc="Segmento dos fundos de investimento gerenciados pela Warren.">Asset Management</button></td>
-            <td><button class="poplink" data-title="General Funds" data-desc="Dinheiro alocado em fundos de investimentos gerais. Gera receita por meio de Management Fee.">General Funds</button></td>
+            <td class="group" rowspan="4"><button class="poplink" data-title="Asset Management" data-desc="Segmento dos fundos de investimento geridos pela Warren, como a AMW e Warren Gestão (para fundos exclusivos).">Asset Management</button></td>
+            <td><button class="poplink" data-title="General Funds" data-desc="Fundos geridos pela AMW e abertos ao público em geral, onde qualquer investidor pode aplicar, conforme regras da CVM (por exemplo: fundos de ações, multimercados, renda fixa). Gera receita via Management Fee e Performance Fee.">General Funds</button></td>
           </tr>
-          <tr><td><button class="poplink" data-title="Private Pension Funds" data-desc="Dinheiro alocado em fundos de pensão privados. Gera receita por meio de Management Fee.">Private Pension Funds</button></td></tr>
+          <tr><td><button class="poplink" data-title="Private Pension Funds" data-desc="Fundos geridos pela AMW e voltados à previdência privada, com benefícios fiscais e foco em acumulação de longo prazo (por exemplo: PGBL, VGBL). Gera receita via Management Fee e Performance Fee.">Private Pension Funds</button></td></tr>
+          <tr><td><button class="poplink" data-title="Exclusive Funds" data-desc="Fundos geridos pela Warren Gestão e criados para um único cotista ou família/grupo econômico. Permitem personalização total da estratégia e tributação. Se for de previdência e exclusivo, então o fundo é classificado como exclusivo. Gera receita por meio de Management e Performance Fee.">Exclusive Funds</button></td></tr>
+		<tr><td><button class="poplink" data-title="Others" data-desc="Descrição.">Others</button></td></tr>
           
-          <tr>
+		<!-- Capital Markets UPDATED -->
+		<tr>
             <td class="group" rowspan="2"><button class="poplink" data-title="Capital Markets" data-desc="Segmento dos produtos financeiros relacionados ao Mercado de Capitais.">Capital Markets</button></td>
-            <td><button class="poplink" data-title="DCM" data-desc="Debt Capital Market. Refere-se à emissão de títulos de dívida para empresas empresas privadas. Gera receita por meio de Comission.">DCM</button></td>
+            <td><button class="poplink" data-title="DCM" data-desc="Debt Capital Market. Refere-se à emissão de títulos de dívida para empresas empresas privadas. Gera receita por meio de Commission.">DCM</button></td>
           </tr>
-          <tr><td><button class="poplink" data-title="ECM" data-desc="Equity Capital Market. Estruturação de um IPO (Oferta Pública Inicial). Pode envolver a preparação da empresa, organização da oferta pública e a conformidade após a abertura de capital. Gera receita por meio de Comission.">ECM</button></td></tr>
-        </tbody>
+          <tr><td><button class="poplink" data-title="ECM" data-desc="Equity Capital Market. Estruturação de um IPO (Oferta Pública Inicial). Pode envolver a preparação da empresa, organização da oferta pública e a conformidade após a abertura de capital. Gera receita por meio de Commission.">ECM</button></td></tr>
+
+		<tr>
+            <td class="group"><button class="poplink" data-title="Client Facilitation" data-desc="Descrição.">Client Facilitation</button></td>
+            <td><button class="poplink" data-title="Client Facilitation" data-desc="Descrição.">Client Facilitation</button></td>
+        </tr>
+		
+		</tbody>
       </table>
     </section>
   </div>
