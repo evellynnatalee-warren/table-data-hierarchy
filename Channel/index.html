@@ -6,7 +6,7 @@
   <title>Channel – Channel / Subchannel</title>
   <style>
     :root{
-      --header-bg:#a2402f;
+      --header-bg:#C7452D;
       --border:#d1c2b4;
       --bg:#ffffff;
       --text:#1f2937;
@@ -21,7 +21,7 @@
     thead th{padding:8px 10px;font-weight:700}
     .head-main th{color:#fff;font-size:16px;background:var(--header-bg);
       border-bottom:1px solid var(--border)}
-    .head-sub th{background:rgba(128,128,128,.2);color:#000;border-bottom:1px solid var(--border)}
+    .head-sub th{background:rgba(246,234,233);color:#000;border-bottom:1px solid var(--border)}
     .head-sub th:first-child{border-right:1px solid var(--border)}
 
     tbody td{border-bottom:1px solid var(--border);border-right:1px solid var(--border);
@@ -59,32 +59,32 @@
           <!-- B2C (7 rows) -->
           <tr>
             <td class="group" rowspan="7">
-              <button class="poplink" data-title="B2C" data-desc="Canal responsável por intermediar a relação dos clientes pessoa física com a Warren, assim como as transações realizadas por eles.">B2C</button>
+              <button class="poplink" data-title="B2C" data-desc="Canal responsável por intermediar a relação direta de clientes com a Warren, assim como as transações realizadas por eles.">B2C</button>
             </td>
-            <td><button class="poplink" data-title="MFO" data-desc="Multi Family Office. Canal focado em atender famílias tradicionais cujo Wealth under Management é maior que R$100M, além de “Tech Founders”. Reporting Category: Complementary">MFO</button></td>
+            <td><button class="poplink" data-title="MFO" data-desc="Multi Family Office. Canal focado em atender famílias cujo patrimônio é maior que R$10M. Relacionamento descontinuado em dez/2024. Reporting Category: Complementary">MFO</button></td>
           </tr>
-          <tr><td><button class="poplink" data-title="W" data-desc="Canal focado no atendimento de clientes cujo Wealth under Management (WuM) é maior que R$ 1M. Reporting Category: Executive View">W</button></td></tr>
-          <tr><td><button class="poplink" data-title="Plus" data-desc="Canal focado no atendimento de clientes cujo WuM é entre R$ 100k e R$ 1M. Reporting Category: Executive View">Plus</button></td></tr>
-          <tr><td><button class="poplink" data-title="Digital" data-desc="Canal utilizado para classificar clientes com WuM menor que R$ 100k. Reporting Category: Executive View">Digital</button></td></tr>
-          <tr><td><button class="poplink" data-title="Extra Channel" data-desc="Administra operações transacionais realizadas por clientes. Reporting Category: Executive View">Extra Channel</button></td></tr>
-          <tr><td><button class="poplink" data-title="Retail Desk" data-desc="Reporting Category: Executive View">Retail Desk</button></td></tr>
-          <tr><td><button class="poplink" data-title="Elliot" data-desc="Administra operações de trading realizadas por clientes pessoa física. Reporting Category: Executive View">Elliot</button></td></tr>
+          <tr><td><button class="poplink" data-title="W" data-desc="Clientes com atendimento de especialistas CFP. Voltado para clientes com patrimônio financeiro ou potencial de investimentos maior que R$ 1M. Reporting Category: Executive View">W</button></td></tr>
+          <tr><td><button class="poplink" data-title="Plus" data-desc="Clientes com atendimento de especialistas de investimentos. Voltado para clientes com patrimônio financeiro ou potencial de investimentos entre R$ 100k e R$ 1M. Reporting Category: Executive View">Plus</button></td></tr>
+          <tr><td><button class="poplink" data-title="Digital" data-desc="Clientes sem atendimento especializado de bankers/especialistas. Voltado para clientes com patrimônio financeiro ou potencial de investimentos menor que R$ 100k.">Digital</button></td></tr>
+          <tr><td><button class="poplink" data-title="Extra Channel" data-desc="Clientes sem conta na Warren que realizam operações cross-sell. Reporting Category: Executive View">Extra Channel</button></td></tr>
+          <tr><td><button class="poplink" data-title="Retail Desk" data-desc="Clientes com atendimento das mesas de varejo. Ex: Mesa Agro. Reporting Category: Executive View">Retail Desk</button></td></tr>
+          <tr><td><button class="poplink" data-title="Elliot" data-desc="Clientes com foco em day-trade atendidos pelo time Elliot e respectivos influenciadores. Reporting Category: Executive View">Elliot</button></td></tr>
 
           <!-- B2B (starts immediately after Elliot) -->
           <tr>
             <td class="group" rowspan="4">
-              <button class="poplink" data-title="B2B" data-desc="Canal responsável por intermediar a relação de clientes pessoa jurídica com a Warren.">B2B</button>
+              <button class="poplink" data-title="B2B" data-desc="Canal responsável por clientes de empresas parceiras, que podem ou não ter relação direta com a Warren.">B2B</button>
             </td>
-            <td><button class="poplink" data-title="WaaS" data-desc="Administra as relações comerciais de empresas parceiras com a Warren. Reporting Category: Executive View">WaaS</button></td>
+            <td><button class="poplink" data-title="Elliot" data-desc="Clientes com foco em day-trade atendidos por algum escritório externo vinculado e respectivos influenciadores. Reporting Category: Executive View">Elliot</button></td>
           </tr>
-          <tr><td><button class="poplink" data-title="Pro" data-desc="Canal voltado para empresas que têm gestão de patrimônio realizada pela Warren. Reporting Category: Executive View">Pro</button></td></tr>
-          <tr><td><button class="poplink" data-title="Elliot" data-desc="Administra operações de trading realizadas por clientes pessoa jurídica. Reporting Category: Executive View">Elliot</button></td></tr>
-          <tr><td><button class="poplink" data-title="Fiduciary Administration" data-desc="Reporting Category: Complementary">Fiduciary Administration</button></td></tr>
+          <tr><td><button class="poplink" data-title="Pro" data-desc="Clientes associados a algum escritório parceiro que tem seu relacionamento administrado por ele. Tem foco em Wealth Planning e Cross-Sell. Ex: Serafin, Portfel. Reporting Category: Executive View">Pro</button></td></tr>
+          <tr><td><button class="poplink" data-title="WaaS" data-desc="Clientes associados a alguma marca/plataforma parceira com foco em distribuição de produtos financeiros. A Warren não necessariamente tem relacionamento com o cliente; ela pode apenas gerenciar o investimento de valores do cliente que foram enviados para essas empresas parceiras. Ex: Loft, Noh. Reporting Category: Executive View">WaaS</button></td></tr>
+          <tr><td><button class="poplink" data-title="Fiduciary Administration" data-desc="Clientes associados à administração de fundos. Relacionamento descontinuado em jul/23. Reporting Category: Complementary">Fiduciary Administration</button></td></tr>
 
           <!-- Institutional -->
           <tr>
             <td class="group" rowspan="5">
-              <button class="poplink" data-title="Institutional">Institutional</button>
+              <button class="poplink" data-title="Institutional" data-desc="Estrutura de relacionamento voltada para clientes institucionais, de grandes volumes, como gestoras, bancos, fundos e outras instituições financeiras.">Institutional</button>
             </td>
             <td><button class="poplink" data-title="Treasuries Desk" data-desc="Mesa responsável pela intermediação e administração de investimentos em Tesouro direto realizados por clientes institucionais. Reporting Category: Executive View">Treasuries Desk</button></td>
           </tr>
